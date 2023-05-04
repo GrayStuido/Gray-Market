@@ -3,6 +3,61 @@
     <title>RCMS Shop Offer Creator</title>
   </head>
   <body>
+	  <div id="overlay">
+	    <div id="user-agreement-form">
+    <div id="user-agreement-text"> <!-- separate div for the text -->
+      <h2>User Agreement</h2>
+      <p class="user-agreement-text">
+	      By using the RCMS Shop website or Discord server, you agree to the following terms and conditions:
+
+1. You are solely responsible for any offers that you make or accept on the RCMS Shop platform.
+
+2. You agree to comply with all applicable laws and school policies when using the RCMS Shop platform.
+
+3. You acknowledge that the developer of RCMS Shop is not responsible for any offers that are illegal or violate school policies in any way.
+
+4. You agree to indemnify and hold the developer of RCMS Shop harmless from any claims, damages, or liabilities that arise from your use of the platform.
+
+5. The developer of RCMS Shop makes no warranties or guarantees about the quality or safety of any items sold or bought through the platform.
+
+6. The developer of RCMS Shop reserves the right to suspend or terminate your access to the platform at any time, for any reason.
+
+By using the RCMS Shop platform, you acknowledge that you have read and agree to these terms and conditions. If you do not agree to these terms and conditions, do not use the RCMS Shop platform.
+	    </p>
+		    </div>
+    <button id="close-button">I Agree</button>
+  </div>
+</div>
+	  </div>
+<script>
+// get the overlay and user agreement form elements
+var overlay = document.getElementById('overlay');
+var closeButton = document.getElementById('close-button');
+
+// hide the overlay and user agreement form by default
+overlay.style.opacity = '1';
+
+// add a click event listener to the close button
+closeButton.addEventListener('click', function() {
+  // gradually decrease the opacity of the overlay
+  var intervalId = setInterval(function() {
+    overlay.style.opacity -= 0.1;
+    if (overlay.style.opacity <= 0) {
+      clearInterval(intervalId);
+      overlay.style.display = 'none';
+    }
+  }, 30);
+});
+
+// function to show the overlay and user agreement form
+function showOverlay() {
+  // show the overlay and user agreement form
+  overlay.style.display = 'flex';
+}
+
+// call the showOverlay function to display the user agreement form
+showOverlay();
+</script>
   <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
     new Crate({
         server: '1103489843788517426', // RCMS Shop
@@ -10,6 +65,54 @@
     })
 </script>
     <style>
+	#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #46127D;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#user-agreement-form {
+  position: relative;
+  z-index: 10000;
+  background-color: #652AC3;
+  padding: 20px;
+  text-align: center;
+  border: 5px solid red;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+#user-agreement-text {
+  font-size: 15px;
+  overflow-x: scroll;
+  width: 720px;
+}
+
+#user-agreement-text::-webkit-scrollbar {
+  width: 10px;
+}
+
+#user-agreement-text::-webkit-scrollbar-track {
+  background-color: transparent; /* set the scrollbar track to transparent */
+}
+
+#user-agreement-text::-webkit-scrollbar-thumb {
+  background-color: #A400B0; /* set the scrollbar thumb color */
+  border-radius: 5px;
+}
+
+
+
+#close-button {
+  margin-top: 20px;
+  background-color: #01007D;
+}
 /* Center form on page */
 #discord-form {
   display: flex;
