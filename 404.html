@@ -1,0 +1,484 @@
+  <head>
+    <meta charset="UTF-8">
+    <title>RCMS Shop Offer Creator</title>
+  </head>
+  <body>
+	  <div id="overlay">
+	    <div id="user-agreement-form">
+    <div id="user-agreement-text"> <!-- separate div for the text -->
+      <h1>404 Page Not Found Or Is Missing</h1>
+      <h2>User Agreement</h2>
+      <p class="user-agreement-text">
+	      By using the RCMS Shop website or Discord server, you agree to the following terms and conditions:
+
+1. You are solely responsible for any offers that you make or accept on the RCMS Shop platform.
+
+2. You agree to comply with all applicable laws and school policies when using the RCMS Shop platform.
+
+3. You acknowledge that the developer of RCMS Shop is not responsible for any offers that are illegal or violate school policies in any way.
+
+4. You agree to indemnify and hold the developer of RCMS Shop harmless from any claims, damages, or liabilities that arise from your use of the platform.
+
+5. The developer of RCMS Shop makes no warranties or guarantees about the quality or safety of any items sold or bought through the platform.
+
+6. The developer of RCMS Shop reserves the right to suspend or terminate your access to the platform at any time, for any reason.
+
+By using the RCMS Shop platform, you acknowledge that you have read and agree to these terms and conditions. If you do not agree to these terms and conditions, do not use the RCMS Shop platform.
+(THESE TERMS MAY BE OUTDATED DO NOT REFER)
+	    </p>
+		    </div>
+    <button id="close-button">I Agree</button>
+  </div>
+</div>
+	  </div>
+<script>
+// get the overlay and user agreement form elements
+var overlay = document.getElementById('overlay');
+var closeButton = document.getElementById('close-button');
+
+// hide the overlay and user agreement form by default
+overlay.style.opacity = '1';
+
+// add a click event listener to the close button
+closeButton.addEventListener('click', function() {
+  // gradually decrease the opacity of the overlay
+  var intervalId = setInterval(function() {
+    overlay.style.opacity -= 0.1;
+    if (overlay.style.opacity <= 0) {
+      clearInterval(intervalId);
+      overlay.style.display = 'none';
+    }
+  }, 30);
+});
+
+// function to show the overlay and user agreement form
+function showOverlay() {
+  // show the overlay and user agreement form
+  overlay.style.display = 'flex';
+}
+
+// call the showOverlay function to display the user agreement form
+showOverlay();
+</script>
+  <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+    new Crate({
+        server: '1103489843788517426', // RCMS Shop
+        channel: '1103490024445595749' // #buy-sell
+    })
+</script>
+    <style>
+	#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #46127D;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#user-agreement-form {
+  position: relative;
+  z-index: 10000;
+  background-color: #652AC3;
+  padding: 20px;
+  text-align: center;
+  border: 5px solid red;
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+#user-agreement-text {
+  font-size: 15px;
+  overflow-x: scroll;
+  width: 720px;
+}
+
+#user-agreement-text::-webkit-scrollbar {
+  width: 10px;
+}
+
+#user-agreement-text::-webkit-scrollbar-track {
+  background-color: transparent; /* set the scrollbar track to transparent */
+}
+
+#user-agreement-text::-webkit-scrollbar-thumb {
+  background-color: #A400B0; /* set the scrollbar thumb color */
+  border-radius: 5px;
+}
+
+
+
+#close-button {
+  margin-top: 20px;
+  background-color: #01007D;
+}
+/* Center form on page */
+#discord-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hide all fieldsets except the first one */
+#discord-form fieldset:not(:first-of-type) {
+  display: none;
+}
+
+/* Style form buttons */
+#discord-form button {
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #7289DA;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: all 0.2s ease-in-out;
+}
+
+#discord-form button:hover {
+  background-color: #4E5D94;
+  transition: all 0.2s ease-in-out;
+}
+
+#discord-form button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Center form buttons */
+#discord-form .form-buttons {
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Default background color */
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+/* Fieldsets */
+fieldset {
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  color: #FFFFFF; /* text color */
+  background-color: #061D59; /* background color */
+}
+
+/* Inputs */
+input[type=text],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #1F305C;
+  color: #FFFFFF;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+input[type=number],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #1F305C;
+  color: #FFFFFF;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Buttons */
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Next/Previous Buttons */
+#previous-btn, #next-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#previous-btn:hover, #next-btn:hover {
+  background-color: #3e8e41;
+}
+
+#previous-btn:disabled, #next-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#previous-btn:focus, #next-btn:focus {
+  outline: none;
+}
+  </style>
+    <form id="discord-form">
+      <fieldset>
+        <legend>Item Information</legend>
+        <label for="item-name">Item Name:</label>
+        <input placeholder="Rockstar" type="text" id="item-name" name="item-name" required><br>
+        
+        <label for="item-price">Price:</label>
+        <input placeholder="5" type="number" id="item-price" name="item-price" required><br>
+        
+        <label for="item-details">Details And Stock:</label>
+        <textarea placeholder="3 Rockstars in good condition" id="item-details" name="item-details" required></textarea><br>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Seller Information</legend>
+        <label for="seller-details">Seller Details:</label>
+        <textarea placeholder="Hello im Wumpus! im selling 3 rockstars for $5 or you can trade me some chips instead! Dm me if your going to want to buy from me!!" id="seller-details" name="seller-details" required></textarea><br>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Pickup Information</legend>
+        <label for="pickup-details">Pickup Details:</label>
+        <textarea placeholder="4:05pm at the basketball area" id="pickup-details" name="pickup-details"></textarea><br>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Discord Information</legend>
+        <label for="discord-name">Discord Name:</label>
+        <input placeholder="Wumpus" type="text" id="discord-name" name="discord-name" required><br>
+        
+        <label for="discord-tag">Discord Tag:</label>
+        <input placeholder="0001" type="number" id="discord-tag" name="discord-tag" required><br>
+	      <p>Join Discord Server: https://discord.gg/ADSY5W53cU</p>
+      </fieldset>
+	  
+      
+      <div class="form-buttons">
+        <button type="button" id="previous-btn" disabled>Previous</button>
+        <button type="button" id="next-btn">Next</button>
+        <button type="submit" id="submit-btn" disabled>Submit</button>
+      </div>
+	      <div class="background">
+		  <canvas id="MatrixBackground"></canvas>
+		  </div>
+		   <script>
+      window.onload = function() {
+        const canvas = document.getElementById('MatrixBackground');
+        const chars = 'abcdefgyzhijklmnopQRSTUVABCDEFGYZ109467ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ日¦｜:・."=*+-<>'; // Your chosen characters
+        const duration = 10000; // Duration of the matrix effect in milliseconds
+
+        // Get canvas context and set canvas size
+        const ctx = canvas.getContext('2d');
+        const w = canvas.width = window.innerWidth;
+        const h = canvas.height = window.innerHeight;
+
+        // Calculate number of columns and initialize y positions
+        const cols = Math.floor(w / 20) + 1;
+        const ypos = Array(cols).fill(0);
+
+        // Fill canvas with black color
+        ctx.fillStyle = '#114BE3';
+        ctx.fillRect(0, 0, w, h);
+
+        // Create matrix effect function
+        const matrix = () => {
+          ctx.fillStyle = '#0001';
+          ctx.fillRect(0, 0, w, h);
+
+          ctx.fillStyle = '#114BE3';
+          ctx.font = '15pt monospace';
+
+          ypos.forEach((y, ind) => {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            const x = ind * 20;
+            ctx.fillText(text, x, y);
+            if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+            else ypos[ind] = y + 20;
+          });
+        };
+
+        // Call matrix effect function every 50 milliseconds
+        const matrixInterval = setInterval(matrix, 50);
+      };
+    </script>
+<script>
+const form = document.getElementById('discord-form');
+const previousBtn = document.getElementById('previous-btn');
+const nextBtn = document.getElementById('next-btn');
+const submitBtn = document.getElementById('submit-btn');
+const background = document.querySelector('.background');
+
+let currentFieldset = 0;
+
+function showFieldset(index) {
+  const fieldsets = form.querySelectorAll('fieldset');
+  
+  // Hide all fieldsets except the one at the given index
+  fieldsets.forEach((fieldset, i) => {
+    if (i === index) {
+      fieldset.style.display = 'block';
+    } else {
+      fieldset.style.display = 'none';
+    }
+  });
+  
+  // Update button disabled/enabled states
+  previousBtn.disabled = (index === 0);
+  nextBtn.disabled = (index === fieldsets.length - 1);
+  submitBtn.disabled = (index !== fieldsets.length - 1);
+  
+  currentFieldset = index;
+  
+  // Change background color based on fieldset index
+  switch (currentFieldset) {
+    case 0:
+      background.style.backgroundColor = '#fff'; // Default background color
+      break;
+    case 1:
+      background.style.backgroundColor = '#f5f5f5'; // Configurable background color
+      break;
+    case 2:
+      background.style.backgroundColor = '#eee'; // Configurable background color
+      break;
+    case 3:
+      background.style.backgroundColor = '#ddd'; // Configurable background color
+      break;
+    // Add more cases as needed for each fieldset
+    default:
+      background.style.backgroundColor = '#fff'; // Default background color
+  }
+}
+
+showFieldset(currentFieldset);
+
+previousBtn.addEventListener('click', () => {
+  showFieldset(currentFieldset - 1);
+});
+
+nextBtn.addEventListener('click', () => {
+  showFieldset(currentFieldset + 1);
+});
+</script>
+
+
+<script>
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // prevent default form submission behavior
+
+  // Get form data
+  const itemName = form.elements['item-name'].value;
+  const itemPrice = form.elements['item-price'].value;
+  const itemDetails = form.elements['item-details'].value;
+  const sellerDetails = form.elements['seller-details'].value;
+  const pickupDetails = form.elements['pickup-details'].value;
+  const discordName = form.elements['discord-name'].value;
+  const discordTag = form.elements['discord-tag'].value;
+
+  // Generate random color code
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+  // Create webhook payload
+  const payload = {
+    embeds: [
+      {
+        title: `Selling: ${itemName}`,
+        description: itemDetails,
+        color: parseInt(randomColor, 16), // Use random color code
+        fields: [
+          {
+            name: 'Price',
+            value: `$${itemPrice}`,
+            inline: true
+          },
+          {
+            name: 'Seller Details',
+            value: sellerDetails,
+            inline: true
+          },
+          {
+            name: 'Pickup Details',
+            value: pickupDetails
+          }
+        ],
+        footer: {
+          text: `Seller: ${discordName}#${discordTag}`
+        }
+      }
+    ]
+  };
+
+  // Send webhook message
+  const webhookURL = 'https://discord.com/api/webhooks/1103493426554601522/yKJDnX60-sW2IOFCtWTUzZdfUMtzZVZ-jmGqtQkb7cidsxZxpLRrSRITrmqCjMrfjfFG'; // replace with your webhook URL
+  const response = await fetch(webhookURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (response.ok) {
+    // Success message
+    alert('Offer sent successfully!');
+    form.reset();
+	location.reload();
+  } else {
+    // Error message
+    alert('Offer failed to send :(');
+  }
+});
+</script>
